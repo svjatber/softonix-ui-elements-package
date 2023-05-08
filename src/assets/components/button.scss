@@ -1,0 +1,60 @@
+@import '../vars.scss';
+
+.s-button {
+  display: inline-flex; 
+  padding-left: 1rem;
+  padding-right: 1rem; 
+  font-weight: 600; 
+  text-transform: uppercase; 
+  justify-content: center; 
+  align-items: center;
+  min-height: 2rem; 
+  font-size: 1rem;
+  border: 1px solid transparent;
+  border-radius: 5px;
+
+  &[disabled] {
+    cursor: not-allowed; 
+    opacity: 0.6; 
+  }
+
+  &.s-button-primary {
+    background-color: map-get($color, secondary);
+    color:  map-get($color, light);
+    &:hover {
+      background-color: map-get($color, usafa-blue);
+    }
+  
+    &[disabled] {
+      background-color: map-get($color, pale-blue);
+      color: map-get($color, alice-blue)
+    }
+  }
+  
+  &.s-button-secondary {
+    background-color: map-get($color, light);
+    color:  map-get($color, secondary);
+    border: 1px solid;
+    border-color: map-get($color, secondary);
+    &:hover {
+      background-color: map-get($color, twilight-blue);
+    }
+  
+    &[disabled] {
+      background-color: map-get($color, light);
+      color:  map-get($color, cornflower);
+      border-color: map-get($color, cornflower);
+    }
+  }
+  
+  &.s-button-specific {
+    background-color: map-get($color, light);
+    color:  map-get($color, special);
+    border: 1px solid;
+    border-color: map-get($color, special);
+    &:hover, &:disabled {
+      background-color: map-get($color, special);
+      color: map-get($color, light);
+    }
+  }
+} 
